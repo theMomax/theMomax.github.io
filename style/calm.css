@@ -1,0 +1,175 @@
+/**
+ * Copyright © 2026 Max Obermeier. All rights reserved.
+ *
+ * Overrides for the calm theme appearance.
+ */
+
+@import "normalize.css" layer(base);
+@import "core.css" layer(base);
+@import "style.css" layer(base);
+
+
+/**
+ * Default font
+ */
+html, html :lang(x-default), html :lang(en) {
+    font-family: "Canela Text", "Palatino", "Georgia", Keyboard, Times, "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", serif;
+}
+
+/**
+ * Default font size
+ */
+@media screen and (min-width: 320px) {
+    html {
+        font-size: max(1rem, 19px);
+    }
+}
+
+/**
+ * Light screen color scheme
+ */
+@media screen {
+    html, html.mac {
+        background-color: rgb(238, 226, 203);
+        color: rgb(53, 45, 37);
+    }
+
+    a {
+        color: hsl(41, 90%, 34%);
+    }
+
+    table, tbody, th, tr, td, hr {
+         border-top-color: rgb(53, 45, 37);
+         border-bottom-color: rgb(53, 45, 37);
+    }
+
+    hr {
+        background-color: rgb(53, 45, 37);
+        opacity: 0.2;
+    }
+}
+
+/**
+ * Dark screen color scheme
+ */
+@media screen and (prefers-color-scheme: dark) {
+    html, html.mac.night-mode, html.night-mode {
+        background-color: rgb(65, 59, 49);
+        color: rgb(246, 236, 220);
+    }
+
+    .night-mode a, a {
+        color: hsl(41, 80%, 60%);
+    }
+
+    table, tbody, th, tr, td, hr {
+        border-top-color: rgba(246, 236, 220);
+        border-bottom-color: rgba(246, 236, 220);
+    }
+
+    hr {
+         background-color: rgba(246, 236, 220);
+         opacity: 0.3;
+    }
+}
+
+/**
+ * Default padding
+ */
+html {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.page-break {
+    height: 2em;
+}
+
+/**
+ * Link override
+ */
+ @media screen {
+     a {
+         text-decoration: none;
+     }
+ }
+
+/**
+ * Title style override
+ */
+
+@media screen {
+    .center-headings {
+        :nth-child(1 of h1) {
+            font-size: 3em;
+            margin-bottom: 1.5em;
+            font-weight: bold;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            width: 80vw;
+            opacity: 0.8;
+        }
+    }
+}
+
+@media screen and (min-width: 920px) {
+    .center-headings {
+        :nth-child(1 of h1) {
+            font-size: 4em;
+        }
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .center-headings {
+        :nth-child(1 of h1) {
+            font-size: 5em;
+        }
+    }
+}
+
+/**
+ * Abstract override.
+ */
+
+ @media screen {
+    .center-headings {
+        /* The first h1 if immediately followed by a paragraph and
+         * a separator line.
+        */
+        :nth-child(1 of h1):has(+ p + hr) {
+            margin-bottom: 0.5em;
+        }
+
+        /* The paragraph immediately following the first h1 if immediately
+        * followed by a separator line.
+        */
+        :nth-child(1 of h1) + p:has(+ hr) {
+            text-align: center;
+        }
+
+        /* The separator line immediately following the paragraph following
+        * the first h1.
+        */
+        :nth-child(1 of h1) + p + hr {
+            margin-top: 4em;
+            margin-bottom: 6em;
+            height: 10px;
+
+            mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100% 100%' version='1.1' xmlns='http://www.w3.org/2000/svg'><circle cx='0' cy='5' r='5'  opacity='0'/><circle transform='translate(-30,0)' cx='50%' cy='5' r='5'/><circle cx='50%' cy='5' r='5'/><circle transform='translate(30,0)' cx='50%' cy='5' r='5'/><circle cx='100%' cy='5' r='5' opacity='0'/></svg>");
+
+            border: none;
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+            opacity: 0.8;
+        }
+    }
+}
+
+/**
+ * Table override.
+ */
+table {
+  table-layout: auto;
+}
