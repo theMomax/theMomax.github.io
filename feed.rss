@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   <title>Max Obermeier's Blog</title>
+   <description>My opinions on design, software engineering, and life.</description>
+   <link>https://themomax.github.io</link>
+   <atom:link href="https://themomax.github.io/feed.xml"
+     rel="self" type="application/rss+xml" />
+
+   <item>
+     <title>Software in the Age of Extraction</title>
+     <link>https://themomax.github.io/Software%20in%20the%20Age%20of%20Extraction.html</link>
+     <guid>https://themomax.github.io/Software%20in%20the%20Age%20of%20Extraction.html</guid>
+     <pubDate>Sun, 05 Apr 2026 15:30:54 +0200</pubDate>
+     <description>Today’s software feels broken. Here’s how I want it to change.</description>
+   </item>
+
+   <!-- items -->
+</channel>
+</rss>
